@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twelve & West Hair Studio | A Different Salon Experience | Orillia, ON</title>
+    <meta name="description" content="Twelve & West Hair Studio offers a different salon experience in Orillia. Specializing in hair coloring, balayage, and styling in our plant-filled sanctuary.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sage: #7A8B6E;
+            --sage-dark: #5C6B52;
+            --sage-light: #9AAD8C;
+            --cream: #FAF8F5;
+            --cream-dark: #F0EDE7;
+            --burgundy: #8B3A4C;
+            --burgundy-light: #A64D5E;
+            --wood: #8B7355;
+            --text-dark: #2C2C2C;
+            --text-medium: #5A5A5A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(250,248,245,0.95), rgba(250,248,245,0));
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(250,248,245,0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 3rem;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--sage-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+        .nav-cta {
+            background: var(--sage);
+            color: var(--cream);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--sage-dark);
+            color: var(--cream);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg-element {
+            position: absolute;
+            width: 60%;
+            height: 80%;
+            right: -10%;
+            top: 10%;
+            background: url('images/hero-brand.jpg') center center / cover no-repeat;
+            opacity: 0.3;
+            border-radius: 0 0 0 40%;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            animation: fadeUp 1.2s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tagline {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            color: var(--sage-dark);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--cream);
+            padding: 1.25rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(122, 139, 110, 0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sage);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: var(--sage);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            background: var(--cream);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .welcome p {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .welcome-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--sage);
+            margin: 3rem auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--sage);
+            color: var(--cream);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            aspect-ratio: 4/5;
+            background: url('images/laura-chair.jpg') center center / cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: 'Laura';
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .about .section-label {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .about .section-title {
+            color: var(--cream);
+        }
+
+        .about p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+
+        /* Space Section */
+        .space {
+            background: var(--cream-dark);
+        }
+
+        .space-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .space-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .space-header p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .space-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            height: 70vh;
+            min-height: 500px;
+        }
+
+        .space-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .space-image-1 {
+            grid-row: span 2;
+            background: url('images/space-main.jpg') center center / cover no-repeat;
+        }
+
+        .space-image-2 {
+            background: url('images/space-waiting.jpg') center center / cover no-repeat;
+        }
+
+        .space-image-3 {
+            background: url('images/hair-work.jpg') center center / cover no-repeat;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--cream);
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid rgba(122, 139, 110, 0.2);
+        }
+
+        .service-item:first-child {
+            border-top: 1px solid rgba(122, 139, 110, 0.2);
+        }
+
+        .service-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .service-item:hover .service-name {
+            color: var(--sage-dark);
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-top: 0.5rem;
+        }
+
+        .service-arrow {
+            font-size: 1.5rem;
+            color: var(--sage);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover .service-arrow {
+            transform: translateX(5px);
+        }
+
+        .services-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--cream-dark);
+            font-style: italic;
+            color: var(--text-medium);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--text-dark);
+            color: var(--cream);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .contact .section-label {
+            color: var(--sage-light);
+        }
+
+        .contact .section-title {
+            color: var(--cream);
+            margin-bottom: 2rem;
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 3rem;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--cream);
+            padding: 1.25rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .contact-cta:hover {
+            background: var(--sage-light);
+        }
+
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .contact-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-block p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contact-block a {
+            color: var(--sage-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-block a:hover {
+            color: var(--cream);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 2rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .hours-grid .closed {
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: rgba(255,255,255,0.5);
+            padding: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--sage-light);
+            text-decoration: none;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .space-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+            }
+
+            .space-image {
+                height: 250px;
+            }
+
+            .space-image-1 {
+                grid-row: span 1;
+                height: 350px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .service-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">TWELVE & WEST</a>
+        <ul class="nav-links">
+            <li><a href="#welcome">About</a></li>
+            <li><a href="#space">The Space</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Visit</a></li>
+        </ul>
+        <a href="tel:7059550755" class="nav-cta">Book Now</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-element"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">Orillia Hair Studio</p>
+            <h1>Twelve <span>&</span> West</h1>
+            <p class="hero-subtitle">A Different Salon Experience</p>
+            <a href="tel:7059550755" class="btn-primary">Book Your Visit</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
+        <p class="section-label">Welcome</p>
+        <h2 class="section-title">Your Time Here Should Feel Like an Escape</h2>
+        <p>At Twelve & West, we believe the salon experience should be different. Step into our plant-filled sanctuary, sink into a vintage velvet chair, and let us take care of the rest. This is your time to breathe, relax, and leave feeling like the best version of yourself.</p>
+        <div class="welcome-divider"></div>
+        <p>No rushed appointments. No assembly-line service. Just intentional, personalized care in a space designed to feel like a retreat from the everyday.</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image"></div>
+            <div class="about-content">
+                <p class="section-label">Meet Laura</p>
+                <h2 class="section-title">The Heart Behind the Chair</h2>
+                <p>Laura Rawn opened Twelve & West with a simple vision: create a salon that feels nothing like the rest. A space where every detail matters, from the vintage furniture to the carefully curated playlist.</p>
+                <p>With a passion for colour, an eye for style, and an unwavering belief that everyone deserves to feel beautiful, Laura has built more than a salon. She has built a sanctuary.</p>
+                <p>When she is not behind the chair, you will probably find her with her dogs, dreaming up new ways to make your next visit even more special.</p>
+                <p class="about-signature">Laura Rawn, Owner</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Section -->
+    <section class="space" id="space">
+        <div class="space-container">
+            <div class="space-header">
+                <p class="section-label">The Space</p>
+                <h2 class="section-title">Designed to Feel Different</h2>
+                <p>Every corner of our studio has been thoughtfully curated to create an atmosphere of calm and creativity. This is not just where we work. It is where transformations happen.</p>
+            </div>
+            <div class="space-grid">
+                <div class="space-image space-image-1"></div>
+                <div class="space-image space-image-2"></div>
+                <div class="space-image space-image-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <p class="section-label">Services</p>
+                <h2 class="section-title">What We Do</h2>
+            </div>
+            <div class="services-list">
+                <div class="service-item">
+                    <div>
+                        <h3 class="service-name">Hair Colouring</h3>
+                        <p class="service-desc">From subtle enhancements to bold transformations</p>
+                    </div>
+                    <span class="service-arrow">&#8594;</span>
+                </div>
+                <div class="service-item">
+                    <div>
+                        <h3 class="service-name">Balayage</h3>
+                        <p class="service-desc">Hand-painted, sun-kissed dimension</p>
+                    </div>
+                    <span class="service-arrow">&#8594;</span>
+                </div>
+                <div class="service-item">
+                    <div>
+                        <h3 class="service-name">Hairstyling</h3>
+                        <p class="service-desc">Cuts, blowouts, and special occasion styling</p>
+                    </div>
+                    <span class="service-arrow">&#8594;</span>
+                </div>
+                <div class="service-item">
+                    <div>
+                        <h3 class="service-name">Consultations</h3>
+                        <p class="service-desc">Let us create a plan tailored to your hair goals</p>
+                    </div>
+                    <span class="service-arrow">&#8594;</span>
+                </div>
+            </div>
+            <p class="services-note">Every service begins with a consultation to ensure we understand exactly what you are looking for. Call to discuss pricing and availability.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-main">
+                <p class="section-label">Visit Us</p>
+                <h2 class="section-title">Ready for a Different Experience?</h2>
+                <p class="contact-intro">We would love to welcome you to our studio. Give us a call to book your appointment or ask any questions.</p>
+                <a href="tel:7059550755" class="contact-cta">Call (705) 955-0755</a>
+            </div>
+            <div class="contact-details">
+                <div class="contact-block">
+                    <h3>Location</h3>
+                    <p>575 West Street S, Unit 2B<br>
+                    Orillia, ON L3V 7N6</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem; font-style: italic;">Located in the West & 12 Plaza<br>(same building as ServiceOntario)</p>
+                </div>
+                <div class="contact-block">
+                    <h3>Hours</h3>
+                    <div class="hours-grid">
+                        <span>Tuesday</span><span>9:00 AM - 7:00 PM</span>
+                        <span>Wednesday</span><span>9:00 AM - 7:00 PM</span>
+                        <span>Thursday</span><span>9:00 AM - 7:00 PM</span>
+                        <span>Friday</span><span>9:00 AM - 6:00 PM</span>
+                        <span class="closed">Saturday</span><span class="closed">Closed</span>
+                        <span class="closed">Sunday</span><span class="closed">Closed</span>
+                        <span class="closed">Monday</span><span class="closed">Closed</span>
+                    </div>
+                </div>
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <p>Phone: <a href="tel:7059550755">(705) 955-0755</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Twelve & West Hair Studio. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">575 West Street S, Unit 2B, Orillia, ON</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
